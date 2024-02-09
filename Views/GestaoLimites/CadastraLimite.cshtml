@@ -1,0 +1,64 @@
+﻿@model GestorDeLimitesModel
+@{
+    ViewData["Title"] = "Cadastrar Limite";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Cadastrar Limite</h1>
+    <p>Cadastra as informações necessárias para gestão de limites</p>
+</div>
+
+<h1 class="display-6">Preencha as informações abaixo:</h1>
+
+<form asp-controller="GestaoLimites" asp-action="CadastraLimite" method="post" class="shadow-lg p-3 mb-5">
+    <div class="row g-3" style="margin-bottom: 10px">
+        <div class="col">
+            <label class="form-label">CPF:</label>
+            <input class="form-control" name="documento" placeholder="00100100010" required />
+        </div>
+        <div class="col">
+            <label class="form-label">Nº Conta:</label>
+            <input class="form-control" name="numeroConta" required />
+        </div>
+    </div>
+    <div class="row g-3" style="margin-bottom: 10px">
+        <div class="col">
+            <label class="form-label">Nº Agência:</label>
+            <input class="form-control" name="numeroAgencia" required />
+        </div>
+        <div class="col">
+            <label class="form-label">Limite Pix:</label>
+            <input class="form-control" name="limitePix" placeholder="2000.50" required />
+        </div>
+    </div>
+
+    <button class="form-control btn btn-primary" type="submit">Cadastrar Registro</button>
+</form>
+
+<h2>@ViewBag.Message</h2>
+
+@if (Model != null)
+{
+    <table class="table table-striped table-bordered table-info">
+        <thead>
+            <tr>
+                <th scope="col">Cliente</th>
+                <th scope="col">Nº Agência</th>
+                <th scope="col">Nº Conta</th>
+                <th scope="col">Novo Limite</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>@Model.Documento</td>
+                <td>@Model.Numero_Agencia</td>
+                <td>@Model.Numero_Conta</td>
+                <td>@Model.Limite_Pix</td>
+            </tr>
+        </tbody>
+    </table>
+}
+
+<div>
+    <a asp-controller="Home" asp-action="Index" class="btn btn-primary">Voltar para a Home</a>
+</div>

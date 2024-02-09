@@ -1,0 +1,28 @@
+﻿@model GestorDeLimitesModel
+@{
+    ViewData["Title"] = "Deletar Registro";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Deletar Registro</h1>
+    <p>Deleta os registros do cliente informado.</p>
+</div>
+
+<h1 class="display-6">Preencha as informações abaixo:</h1>
+
+<form asp-controller="Registros" asp-action="DeletarRegistro" method="post" class="shadow-lg p-3 mb-5">
+    <div class="row g-3" style="margin-bottom: 10px">
+        <div class="col">
+            <label class="form-label">CPF:</label>
+            <input class="form-control" name="documento" placeholder="00100100010" required />
+        </div>
+    </div>
+
+    <button class="form-control btn btn-primary" type="submit">Deletar Registro</button>
+</form>
+
+<h2>@ViewBag.Message</h2>
+
+<div>
+    <a asp-controller="Home" asp-action="Index" class="btn btn-primary">Voltar para a Home</a>
+</div>

@@ -1,0 +1,16 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Olá!</h1>
+    <p>Escolha o que deseja fazer:</p>
+    <div class="btn-group btn-group-lg">
+        <a asp-area="" asp-controller="GestaoLimites" asp-action="CadastraLimite" class="btn btn-primary active" aria-current="page" style="background-color: #195ab4"><img src="./assets/person-plus-fill.svg" /> Cadastrar Limite</a>
+        <a asp-area="" asp-controller="Registros" asp-action="BuscarRegistro" style="background-color: #195ab4" class="btn btn-primary"><img src="./assets/search.svg" /> Buscar Registro</a>
+        <a asp-area="" asp-controller="Registros" asp-action="DeletarRegistro" style="background-color: #195ab4" class="btn btn-primary"><img src="./assets/trash3.svg" /> Deletar Registro</a>
+        <a asp-area="" asp-controller="GestaoLimites" asp-action="AtualizaLimite" style="background-color: #195ab4" class="btn btn-primary"><img src="./assets/arrow-clockwise.svg" /> Atualizar Limite</a>
+        <a asp-area="" asp-controller="TransacoesPix" asp-action="RegistrarTransacaoPix" style="background-color: #195ab4" class="btn btn-primary"><img src="./assets/coin.svg" /> Transação Pix</a>
+        <a asp-area="" asp-controller="TransacoesPix" asp-action="ObterTransacoesPix" style="background-color: #195ab4" class="btn btn-primary"><img src="./assets/clock-history.svg" /> Histórico de Transações</a>
+    </div>
+</div>
